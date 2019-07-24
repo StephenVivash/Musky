@@ -13,13 +13,17 @@ def getGitSha = { ->
 }
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.keylesspalace.tusky"
+        applicationId "com.keylesspalace.musky"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 65
-        versionName "8.1"
+        versionCode 66
+        versionName "8.1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
@@ -34,6 +38,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {}
     }

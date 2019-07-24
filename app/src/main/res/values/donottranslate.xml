@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Tusky</string>
-    <string name="app_website" translatable="false">https://tusky.app</string>
+    <string name="app_name" translatable="false">Musky</string>
+    <string name="app_website" translatable="false">https://www.stephenvivash.com/musky</string>
 
     <string name="oauth_scheme" translatable="false">oauth2redirect</string>
     <string name="preferences_file_key" translatable="false">com.keylesspalace.tusky.PREFERENCES</string>
@@ -111,8 +111,8 @@
     </string>
 
     <string-array name="rick_roll_domains" translatable="false">
-        <item>gab.com</item>
-        <item>gab.ai</item>
+        <item>gab.com.xxx</item>
+        <item>gab.ai.xxx</item>
     </string-array>
 
     <string name="rick_roll_url">https://www.youtube.com/watch?v=dQw4w9WgXcQ</string>
