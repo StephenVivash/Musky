@@ -1,4 +1,4 @@
-/* Copyright 2019 Joel Pyska
+/* Copyright 2017 Andrew Dawson
  *
  * This file is a part of Tusky.
  *
@@ -13,11 +13,10 @@
  * You should have received a copy of the GNU General Public License along with Tusky; if not,
  * see <http://www.gnu.org/licenses>. */
 
-package com.keylesspalace.tusky.util
+package com.keylesspalace.tusky.entity
 
-import com.keylesspalace.tusky.entity.Status
-
-fun Status.isCollapsible(): Boolean {
-    return !shouldTrimStatus(content)
-}
-
+data class SearchResults2 (
+    val accounts: List<Account>,
+    val statuses: List<Status>,
+    val hashtags: List<HashTag>
+)
