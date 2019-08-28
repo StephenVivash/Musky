@@ -18,7 +18,6 @@
     <string name="error_media_download_permission">Permission requise pour enregistrer le média.</string>
     <string name="error_media_upload_image_or_video">Un même pouet ne peut contenir à la fois une vidéo et une image.</string>
     <string name="error_media_upload_sending">Échec d’envoi du média.</string>
-    <string name="error_report_too_few_statuses">Au moins un pouet doit été signalé.</string>
     <string name="error_sender_account_gone">Erreur lors de l’envoi du pouet.</string>
     <string name="title_home">Accueil</string>
     <string name="title_notifications">Notifications</string>
@@ -291,7 +290,7 @@
     <string name="hint_describe_for_visually_impaired">Décrire pour les malvoyants
 \n(%d caractères maximum)</string>
     <string name="action_set_caption">Mettre une légende</string>
-    <string name="action_remove_media">Supprimer le média</string>
+    <string name="action_remove">Supprimer le média</string>
     <string name="lock_account_label">Verrouiller le compte</string>
     <string name="lock_account_label_description">Vous devez approuvez manuellement les abonnements</string>
     <string name="compose_save_draft">Enregistrer comme brouillon ?</string>
@@ -451,8 +450,23 @@
 
     <string name="pref_title_show_notifications_filter">Montrer le filtre des notifications</string>
 <string name="filter_dialog_whole_word">Mot entier</string>
-    <string name="filter_dialog_whole_word_description">Alphanumérique seulement, sera appliqué uniquement sur le mot entier</string>
+    <string name="filter_dialog_whole_word_description">Un mot-clé ou une phrase alphanumérique sera appliquée seulement s\'il ou elle correspond au mot entier</string>
     <string name="title_accounts">Comptes</string>
     <string name="failed_search">Échec de la recherche</string>
 
-    </resources>
+    <string name="pref_title_alway_open_spoiler">Toujours ouvrir les pouets avec un contenu sensible</string>
+    <string name="action_add_poll">Ajouter un sondage</string>
+    <string name="create_poll_title">Sondage</string>
+    <string name="poll_duration_5_min">5 minutes</string>
+    <string name="poll_duration_30_min">30 minutes</string>
+    <string name="poll_duration_1_hour">1 heure</string>
+    <string name="poll_duration_6_hours">6 heures</string>
+    <string name="poll_duration_1_day">1 jour</string>
+    <string name="poll_duration_3_days">3 jours</string>
+    <string name="poll_duration_7_days">7 jours</string>
+    <string name="add_poll_choice">Ajouter un choix</string>
+    <string name="poll_allow_multiple_choices">Choix multiples</string>
+    <string name="poll_new_choice_hint">Choix %d</string>
+    <string name="edit_poll">Éditer</string>
+
+</resources>

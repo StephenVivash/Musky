@@ -79,7 +79,7 @@ class StatusViewHolder(itemView: View,
 
     private fun updateTextView() {
         status()?.let { status ->
-            setupCollapsedState(status.isCollapsible(), viewState.isCollapsed(status.id, true),
+            setupCollapsedState(shouldTrimStatus(status.content), viewState.isCollapsed(status.id, true),
                     viewState.isContentShow(status.id, status.sensitive), status.spoilerText)
 
             if (status.spoilerText.isBlank()) {
@@ -130,7 +130,7 @@ class StatusViewHolder(itemView: View,
             itemView.timestampInfo.text = if (createdAt != null) {
                 val then = createdAt.time
                 val now = System.currentTimeMillis()
-                DateUtils.getRelativeTimeSpanString(itemView.timestampInfo.context, then, now)
+                TimestampUtils.getRelativeTimeSpanString(itemView.timestampInfo.context, then, now)
             } else {
                 // unknown minutes~
                 "?m"

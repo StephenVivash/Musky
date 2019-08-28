@@ -21,9 +21,7 @@ import com.keylesspalace.tusky.util.ViewDataUtils
 import com.keylesspalace.tusky.viewdata.StatusViewData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
 
 class SearchViewModel @Inject constructor(
         mastodonApi: MastodonApi,
@@ -45,7 +43,9 @@ class SearchViewModel @Inject constructor(
     private val statusesRepository = SearchRepository<Pair<Status, StatusViewData.Concrete>>(mastodonApi)
     private val accountsRepository = SearchRepository<Account>(mastodonApi)
     private val hashtagsRepository = SearchRepository<HashTag>(mastodonApi)
-    var alwaysShowSensitiveMedia: Boolean = activeAccount?.alwaysShowSensitiveMedia
+    val alwaysShowSensitiveMedia: Boolean = activeAccount?.alwaysShowSensitiveMedia
+            ?: false
+    val alwaysOpenSpoiler: Boolean = activeAccount?.alwaysOpenSpoiler
             ?: false
 
     private val repoResultStatus = MutableLiveData<Listing<Pair<Status, StatusViewData.Concrete>>>()
@@ -67,7 +67,7 @@ class SearchViewModel @Inject constructor(
     fun search(query: String?) {
         loadedStatuses.clear()
         repoResultStatus.value = statusesRepository.getSearchData(SearchType.Status, query, disposables, initialItems = loadedStatuses) {
-            (it?.statuses?.map { status -> Pair(status, ViewDataUtils.statusToViewData(status, alwaysShowSensitiveMedia)!!) }
+            (it?.statuses?.map { status -> Pair(status, ViewDataUtils.statusToViewData(status, alwaysShowSensitiveMedia, alwaysOpenSpoiler)!!) }
                     ?: emptyList())
                     .apply {
                         loadedStatuses.addAll(this)
@@ -76,9 +76,11 @@ class SearchViewModel @Inject constructor(
         repoResultAccount.value = accountsRepository.getSearchData(SearchType.Account, query, disposables) {
             it?.accounts ?: emptyList()
         }
-        repoResultHashTag.value = hashtagsRepository.getSearchData(SearchType.Hashtag, String.format(Locale.getDefault(),"#%s",query), disposables) {
-            it?.hashtags ?: emptyList()
-        }
+        val hashtagQuery = if (query != null && query.startsWith("#")) query else "#$query"
+        repoResultHashTag.value =
+                hashtagsRepository.getSearchData(SearchType.Hashtag, hashtagQuery, disposables) {
+                    it?.hashtags ?: emptyList()
+                }
 
     }
 

@@ -17,7 +17,6 @@
     <string name="error_media_download_permission">Cal pemís d\'escritura dins lo mèdia.</string>
     <string name="error_media_upload_image_or_video">Se pòt pas ajustar imatges e una vidèo dins lo meteis estatut.</string>
     <string name="error_media_upload_sending">Fracàs en mandar.</string>
-    <string name="error_report_too_few_statuses">Cal almens denonciar un estatut.</string>
     <string name="error_sender_account_gone">Error en enviar lo tut.</string>
     <string name="title_home">Acuèlh</string>
     <string name="title_notifications">Notificacions</string>
@@ -231,7 +230,7 @@
     <string name="compose_active_account_description">Publicar amb lo compte %1$s</string>
     <string name="error_failed_set_caption">Fracàs en apondre una legenda</string>
     <string name="action_set_caption">Apondre una legenda</string>
-    <string name="action_remove_media">Levar</string>
+    <string name="action_remove">Levar</string>
     <string name="lock_account_label">Clavar lo compte</string>
     <string name="lock_account_label_description">Demanda que validetz manualament los seguidors</string>
     <string name="compose_save_draft">Salvar lo borrolhon ?</string>
@@ -340,13 +339,13 @@
     <string name="license_cc_by_sa_4">CC-BY-SA 4.0</string>
 
     <plurals name="favs">
-	<item quantity="one">&lt;b>%1$s&lt;/b> Favorit</item>
-	<item quantity="other">&lt;b>3%1$s&lt;/b>4 Favorits</item>
+	<item quantity="one">&lt;b&gt;%1$s&lt;/b&gt; Favorit</item>
+	<item quantity="other">&lt;b&gt;3%1$s&lt;/b&gt;4 Favorits</item>
 </plurals>
 
     <plurals name="reblogs">
-	<item quantity="one">&lt;b>%s&lt;/b> partatge</item>
-	<item quantity="other">&lt;b>%s&lt;/b> partatges</item>
+	<item quantity="one">&lt;b&gt;%s&lt;/b&gt; partatge</item>
+	<item quantity="other">&lt;b&gt;%s&lt;/b&gt; partatges</item>
 </plurals>
 
     <string name="title_reblogged_by">Partejat per</string>
@@ -457,4 +456,22 @@
     <string name="pref_title_show_notifications_filter">Mostrar lo filtre de las notificacions</string>
 <string name="filter_dialog_whole_word">Mot complèt</string>
     <string name="filter_dialog_whole_word_description">Quand un mot clau o una frasa es solament alfanumeric, serà pas qu’aplicat se correspond al mot complèt</string>
-    </resources>
+    <string name="pref_title_alway_open_spoiler">Totjorn desplegar los tuts marcats amb un avertiment de contengut</string>
+    <string name="title_accounts">Comptes</string>
+    <string name="failed_search">Fracàs de la recèrca</string>
+
+    <string name="action_add_poll">Ajustar un sondatge</string>
+    <string name="create_poll_title">Sondatge</string>
+    <string name="poll_duration_5_min">5 minutas</string>
+    <string name="poll_duration_30_min">30 minutas</string>
+    <string name="poll_duration_1_hour">1 ora</string>
+    <string name="poll_duration_6_hours">6 oras</string>
+    <string name="poll_duration_1_day">1 jorn</string>
+    <string name="poll_duration_3_days">3 jorns</string>
+    <string name="poll_duration_7_days">7 jorns</string>
+    <string name="add_poll_choice">Ajustar d’opcions</string>
+    <string name="poll_allow_multiple_choices">Opcions multiplas</string>
+    <string name="poll_new_choice_hint">Opcion %d</string>
+    <string name="edit_poll">Modificar</string>
+
+</resources>

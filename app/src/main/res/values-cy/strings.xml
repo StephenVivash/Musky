@@ -17,7 +17,6 @@
     <string name="error_media_download_permission">Rhaid cael caniatâd i gadw hwn.</string>
     <string name="error_media_upload_image_or_video">Ni allwch atodi delweddau a fideos i\'r un statws.</string>
     <string name="error_media_upload_sending">Methu uwchlwytho.</string>
-    <string name="error_report_too_few_statuses">Rhaid rhoi gwybod am o leiaf un statws.</string>
     <string name="error_sender_account_gone">Methu tŵtio.</string>
     <string name="title_home">Hafan</string>
     <string name="title_notifications">Hysbysiadau</string>
@@ -240,7 +239,7 @@
     <string name="compose_active_account_description">Yn postio â chyfrif %1$s</string>
     <string name="error_failed_set_caption">Methu gosod pennawd</string>
     <string name="action_set_caption">Pennu pennawd</string>
-    <string name="action_remove_media">Dileu</string>
+    <string name="action_remove">Dileu</string>
     <string name="lock_account_label">Cloi cyfrif</string>
     <string name="lock_account_label_description">Angen cymeradwyo dilynwyr eich hun</string>
     <string name="compose_save_draft">Cadw drafft?</string>
@@ -276,4 +275,19 @@
     <string name="profile_metadata_content_label">Cynnwys</string>
     <string name="pref_title_absolute_time">Defnyddio amser absoliwt</string>
 <string name="status_username_format">\@%s</string>
+    <string name="error_network">Digwyddodd gwall rhwydwaith! Gwiriwch eich cysylltiad a cheisiwch eto!</string>
+    <string name="title_direct_messages">Negeseuon Uniongyrchol</string>
+    <string name="title_tab_preferences">Tabiau</string>
+    <string name="title_tag">#%s</string>
+    <string name="title_statuses_pinned">Wedi\'i binio</string>
+    <string name="title_domain_mutes">Parthau cudd</string>
+    <string name="message_empty">Dim byd yma.</string>
+    <string name="action_unreblog">Dileu hwb</string>
+    <string name="action_unfavourite">Dileu hoff</string>
+    <string name="action_delete_and_redraft">Dileu ac ail-ddrafftio</string>
+    <string name="action_view_account_preferences">Dewisiadau Cyfrif</string>
+    <string name="action_view_domain_mutes">Parthau cudd</string>
+    <string name="action_mute_domain">Tawelwch %s</string>
+    <string name="action_add_tab">Ychwanegu Tab</string>
+    <string name="action_links">Cysylltiadau</string>
     </resources>

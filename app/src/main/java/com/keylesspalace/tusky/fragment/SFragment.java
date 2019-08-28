@@ -165,7 +165,6 @@ public abstract class SFragment extends BaseFragment implements Injectable {
         final String id = status.getActionableId();
         final String accountId = status.getActionableStatus().getAccount().getId();
         final String accountUsername = status.getActionableStatus().getAccount().getUsername();
-        final Spanned content = status.getActionableStatus().getContent();
         final String statusUrl = status.getActionableStatus().getUrl();
         List<AccountEntity> accounts = accountManager.getAllAccountsOrderedByActive();
         String openAsTitle = null;
@@ -273,7 +272,7 @@ public abstract class SFragment extends BaseFragment implements Injectable {
                     return true;
                 }
                 case R.id.status_report: {
-                    openReportPage(accountId, accountUsername, id, content);
+                    openReportPage(accountId, accountUsername, id);
                     return true;
                 }
                 case R.id.status_unreblog_private: {
@@ -340,9 +339,8 @@ public abstract class SFragment extends BaseFragment implements Injectable {
         startActivity(intent);
     }
 
-    protected void openReportPage(String accountId, String accountUsername, String statusId,
-                                  Spanned statusContent) {
-        startActivity(ReportActivity.getIntent(requireContext(),accountId,accountUsername,statusId,statusContent));
+    protected void openReportPage(String accountId, String accountUsername, String statusId) {
+        startActivity(ReportActivity.getIntent(requireContext(), accountId, accountUsername, statusId));
     }
 
     protected void showConfirmDeleteDialog(final String id, final int position) {
@@ -366,14 +364,18 @@ public abstract class SFragment extends BaseFragment implements Injectable {
                     timelineCases.delete(id);
                     removeItem(position);
 
-                    Intent intent = new ComposeActivity.IntentBuilder()
+                    ComposeActivity.IntentBuilder intentBuilder = new ComposeActivity.IntentBuilder()
                             .tootText(getEditableText(status.getContent(), status.getMentions()))
                             .inReplyToId(status.getInReplyToId())
                             .visibility(status.getVisibility())
                             .contentWarning(status.getSpoilerText())
                             .mediaAttachments(status.getAttachments())
-                            .sensitive(status.getSensitive())
-                            .build(getContext());
+                            .sensitive(status.getSensitive());
+                    if(status.getPoll() != null) {
+                        intentBuilder.poll(status.getPoll().toNewPoll(status.getCreatedAt()));
+                    }
+
+                    Intent intent = intentBuilder.build(getContext());
                     startActivity(intent);
                 })
                 .setNegativeButton(android.R.string.cancel, null)
@@ -472,7 +474,7 @@ public abstract class SFragment extends BaseFragment implements Injectable {
 
     boolean shouldFilterStatus(Status status) {
         return (filterRemoveRegex && (filterRemoveRegexMatcher.reset(status.getActionableStatus().getContent()).find()
-            || (!status.getSpoilerText().isEmpty() && filterRemoveRegexMatcher.reset(status.getActionableStatus().getSpoilerText()).find())));
+                || (!status.getSpoilerText().isEmpty() && filterRemoveRegexMatcher.reset(status.getActionableStatus().getSpoilerText()).find())));
     }
 
     private void applyFilters(boolean refresh) {

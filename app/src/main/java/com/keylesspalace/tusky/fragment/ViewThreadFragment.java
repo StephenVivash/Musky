@@ -48,7 +48,6 @@ import com.keylesspalace.tusky.interfaces.StatusActionListener;
 import com.keylesspalace.tusky.network.MastodonApi;
 import com.keylesspalace.tusky.util.ListStatusAccessibilityDelegate;
 import com.keylesspalace.tusky.util.PairedList;
-import com.keylesspalace.tusky.util.SmartLengthInputFilterKt;
 import com.keylesspalace.tusky.util.ThemeUtils;
 import com.keylesspalace.tusky.util.ViewDataUtils;
 import com.keylesspalace.tusky.view.ConversationLineItemDecoration;
@@ -93,6 +92,7 @@ public final class ViewThreadFragment extends SFragment implements
     private ThreadAdapter adapter;
     private String thisThreadsStatusId;
     private boolean alwaysShowSensitiveMedia;
+    private boolean alwaysOpenSpoiler;
 
     private int statusIndex = 0;
 
@@ -102,7 +102,8 @@ public final class ViewThreadFragment extends SFragment implements
                 public StatusViewData.Concrete apply(Status input) {
                     return ViewDataUtils.statusToViewData(
                             input,
-                            alwaysShowSensitiveMedia
+                            alwaysShowSensitiveMedia,
+                            alwaysOpenSpoiler
                     );
                 }
             });
@@ -150,6 +151,7 @@ public final class ViewThreadFragment extends SFragment implements
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(
                 getActivity());
         alwaysShowSensitiveMedia = accountManager.getActiveAccount().getAlwaysShowSensitiveMedia();
+        alwaysOpenSpoiler = accountManager.getActiveAccount().getAlwaysOpenSpoiler();
         boolean mediaPreviewEnabled = accountManager.getActiveAccount().getMediaPreviewEnabled();
         adapter.setMediaPreviewEnabled(mediaPreviewEnabled);
         boolean useAbsoluteTime = preferences.getBoolean("absoluteTimeView", false);
@@ -360,7 +362,6 @@ public final class ViewThreadFragment extends SFragment implements
         }
 
         StatusViewData.Concrete updatedStatus = new StatusViewData.Builder(status)
-                .setCollapsible(!SmartLengthInputFilterKt.shouldTrimStatus(status.getContent()))
                 .setCollapsed(isCollapsed)
                 .createStatusViewData();
         statuses.setPairedItem(position, updatedStatus);

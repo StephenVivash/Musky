@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.browser.customtabs.CustomTabsIntent;
 import android.text.SpannableStringBuilder;
@@ -81,7 +83,7 @@ public class LinkHelper {
                 final String tag = text.subSequence(1, text.length()).toString();
                 customSpan = new ClickableSpanNoUnderline() {
                     @Override
-                    public void onClick(View widget) { listener.onViewTag(tag); }
+                    public void onClick(@NonNull View widget) { listener.onViewTag(tag); }
                 };
             } else if (text.charAt(0) == '@' && mentions != null && mentions.length > 0) {
                 String accountUsername = text.subSequence(1, text.length()).toString();
@@ -101,7 +103,7 @@ public class LinkHelper {
                     final String accountId = id;
                     customSpan = new ClickableSpanNoUnderline() {
                         @Override
-                        public void onClick(View widget) { listener.onViewAccount(accountId); }
+                        public void onClick(@NonNull View widget) { listener.onViewAccount(accountId); }
                     };
                 }
             }
@@ -127,7 +129,6 @@ public class LinkHelper {
         }
 
         view.setText(builder);
-        view.setLinksClickable(true);
         view.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
@@ -155,7 +156,7 @@ public class LinkHelper {
             final String accountId = mention.getId();
             ClickableSpan customSpan = new ClickableSpanNoUnderline() {
                 @Override
-                public void onClick(View widget) { listener.onViewAccount(accountId); }
+                public void onClick(@NonNull View widget) { listener.onViewAccount(accountId); }
             };
 
             end += 1 + accountUsername.length(); // length of @ + username
@@ -175,6 +176,7 @@ public class LinkHelper {
             start = end;
         }
         view.setText(builder);
+        view.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     /**
@@ -206,7 +208,7 @@ public class LinkHelper {
         try {
             context.startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            Log.w("LinkHelper", "Actvity was not found for intent, " + intent.toString());
+            Log.w("LinkHelper", "Actvity was not found for intent, " + intent);
         }
     }
 
@@ -227,7 +229,7 @@ public class LinkHelper {
         try {
             customTabsIntent.launchUrl(context, uri);
         } catch (ActivityNotFoundException e) {
-            Log.w("LinkHelper", "Activity was not found for intent " + customTabsIntent.toString());
+            Log.w("LinkHelper", "Activity was not found for intent " + customTabsIntent);
             openLinkInBrowser(uri, context);
         }
 

@@ -18,7 +18,6 @@
     <string name="error_media_download_permission">التصريح لازم للإحتفاظ بالوسائط.</string>
     <string name="error_media_upload_image_or_video">لا يمكنك إرفاق كلا من الصور و الفيديوهات في نفس المنشور.</string>
     <string name="error_media_upload_sending">اخفقت عملية الرفع.</string>
-    <string name="error_report_too_few_statuses">يجب على الأقل اختيار منشور واحد للإبلاغ عنه.</string>
     <string name="error_sender_account_gone">خطأ عند إرسال التبويق.</string>
     <string name="title_home">الرئيسية</string>
     <string name="title_notifications">الاشعارات</string>
@@ -281,7 +280,7 @@
     <string name="hint_describe_for_visually_impaired">وصف لضعاف البصر
 \n(%d أحرف على أقصى تقدير)</string>
     <string name="action_set_caption">إضافة شرح</string>
-    <string name="action_remove_media">حذف</string>
+    <string name="action_remove">حذف</string>
     <string name="lock_account_label">تجميد الحساب</string>
     <string name="lock_account_label_description">يتطلب منك قبول طلبات المتابَعة يدويا</string>
     <string name="compose_save_draft">هل تود الإحتفاظ بالمسودة ؟</string>
@@ -464,4 +463,22 @@
     <string name="report_description_1">سيتم إرسال التقرير إلى مشرفي خادمك. يمكنك تقديم تفسير عن سبب الإبلاغ عن الحساب أدناه:</string>
     <string name="report_description_remote_instance">هذا الحساب ينتسب إلى خادم آخر. هل تريد إرسال نسخة مجهولة من التقرير إلى هناك أيضا؟</string>
 
-    </resources>
+    <string name="title_accounts">الحسابات</string>
+    <string name="failed_search">فشل البحث</string>
+
+    <string name="action_add_poll">إضافة استطلاع رأي</string>
+    <string name="pref_title_alway_open_spoiler">افتح دائما التبويقات التي تحتوي على محتوى حساس</string>
+    <string name="create_poll_title">استطلاع رأي</string>
+    <string name="poll_duration_5_min">5 دقائق</string>
+    <string name="poll_duration_30_min">30 دقيقة</string>
+    <string name="poll_duration_1_hour">ساعة واحدة</string>
+    <string name="poll_duration_6_hours">6 ساعات</string>
+    <string name="poll_duration_1_day">يوم واحد</string>
+    <string name="poll_duration_3_days">3 أيام</string>
+    <string name="poll_duration_7_days">7 أيام</string>
+    <string name="add_poll_choice">ضف خيارا</string>
+    <string name="poll_allow_multiple_choices">خيارات متعددة</string>
+    <string name="poll_new_choice_hint">الخيار %d</string>
+    <string name="edit_poll">تعديل</string>
+
+</resources>

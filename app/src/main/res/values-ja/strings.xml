@@ -17,7 +17,6 @@
     <string name="error_media_download_permission">メディアの書き込み許可が必要です。</string>
     <string name="error_media_upload_image_or_video">画像と動画を同時に投稿することはできません。</string>
     <string name="error_media_upload_sending">アップロードに失敗しました。</string>
-    <string name="error_report_too_few_statuses">少なくとも1つの投稿を報告してください。</string>
     <string name="error_sender_account_gone">トゥート送信時のエラーです。</string>
     <string name="title_home">ホーム</string>
     <string name="title_notifications">通知</string>
@@ -265,7 +264,7 @@
     <string name="error_failed_set_caption">説明の設定に失敗しました</string>
     <string name="hint_describe_for_visually_impaired">視覚障害者のための説明 (%d文字まで)</string>
     <string name="action_set_caption">説明を設定</string>
-    <string name="action_remove_media">消去</string>
+    <string name="action_remove">消去</string>
     <string name="lock_account_label">アカウントをロック</string>
     <string name="lock_account_label_description">フォロワーを手動で承認する必要があります</string>
     <string name="compose_save_draft">下書きを保存しますか？</string>
@@ -328,4 +327,42 @@
     <string name="action_unreblog">ブーストを解除</string>
     <string name="action_unfavourite">お気に入りを解除</string>
     <string name="action_open_reblogged_by">ブーストを表示</string>
+    <string name="download_media">メディアをダウンロード</string>
+    <string name="downloading_media">メディアをダウンロード中</string>
+
+    <string name="app_theme_system">システムの設定を利用</string>
+
+    <string name="notifications_clear">通知を削除</string>
+    <string name="notifications_apply_filter">フィルター</string>
+    <string name="notification_clear_text">すべての通知を完全に削除してよろしいですか？</string>
+    <plurals name="poll_info_votes">
+	<item quantity="other">%s票</item>
+</plurals>
+    <string name="poll_info_time_relative">残り%s</string>
+    <string name="poll_vote">投票</string>
+
+    <plurals name="poll_timespan_days">
+	<item quantity="other">%d日</item>
+</plurals>
+    <plurals name="poll_timespan_hours">
+	<item quantity="other">%d時間</item>
+</plurals>
+    <plurals name="poll_timespan_minutes">
+	<item quantity="other">%d分</item>
+</plurals>
+    <plurals name="poll_timespan_seconds">
+	<item quantity="other">%d秒</item>
+</plurals>
+
+    <string name="title_domain_mutes">非表示のドメイン</string>
+    <string name="action_view_domain_mutes">非表示のドメイン</string>
+    <string name="action_mute_domain">%sをミュート</string>
+    <string name="pref_title_notification_filter_poll">投票の集計が完了した</string>
+    <string name="notification_poll_name">投票</string>
+    <string name="notification_poll_description">投票の集計が完了したときの通知</string>
+
+
+    <string name="pref_title_thread_filter_keywords">会話</string>
+    <string name="caption_notoemoji">Googleの現在の絵文字セットです</string>
+
     </resources>
